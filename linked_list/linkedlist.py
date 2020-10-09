@@ -7,9 +7,11 @@ class Node():
         self.next = next_node
         self.prev = prev_node
 
+    def __str__(self):
+        return str(self.value)
 
 class LinkedList():
-    def __init__(self, data):
+    def __init__(self, data=None):
         self.head = None
         self.tail = None
         if data:
@@ -26,7 +28,11 @@ class LinkedList():
                 n = n.next
             return cnt
 
-    def add_to_beginnig(self, data):
+    def __str__(self):
+        values = [str(x) for x in self.___iterate__()]
+        return ' -> '.join(values)
+
+    def add_to_beginning(self, data):
         if self.head is None:
             self.head = self.tail = Node(data)
         else:
