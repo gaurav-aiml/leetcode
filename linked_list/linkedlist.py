@@ -1,7 +1,7 @@
 #@author : Gaurav Pai
 #date-created : 10/08/20
 
-class Node():
+class Node:
     def __init__(self, data, next_node=None, prev_node=None):
         self.data = data
         self.next = next_node
@@ -10,7 +10,9 @@ class Node():
     def __str__(self):
         return str(self.value)
 
-class LinkedList():
+
+class LinkedList:
+
     def __init__(self, data=None):
         self.head = None
         self.tail = None
@@ -29,7 +31,7 @@ class LinkedList():
             return cnt
 
     def __str__(self):
-        values = [str(x) for x in self.___iterate__()]
+        values = [str(x) for x in self.___iter__()]
         return ' -> '.join(values)
 
     def add_to_beginning(self, data):
@@ -46,7 +48,7 @@ class LinkedList():
             self.tail.next = Node(data)
             self.tail = self.tail.next
 
-    def ___iterate__(self):
+    def ___iter__(self):
         if self.head is None:
             return []
         n = self.head
